@@ -50,3 +50,8 @@ You can use `Runtime.getRuntime().addShutdownHook` JVM's facility.
 The property `call.request.origin` gives connection information about the original caller (the proxy)
 if the proxy provides proper headers and the feature `XForwardedHeadersSupport` is installed.
 
+#### My route is not being executed, how can I debug it?
+{: #route-not-executing }
+
+Ktor provides a tracing mechanism for the routing feature to help troubleshooting
+routing decisions. Check the [Tracing the routing decisions](/features/routing.html#tracing) section in the Routing page.
