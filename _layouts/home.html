@@ -1,60 +1,63 @@
-<!DOCTYPE html>
-<!--[if IE 8]>
-<html lang="en" class="ie8"> <![endif]-->
-<!--[if IE 9]>
-<html lang="en" class="ie9"> <![endif]-->
-<!--[if !IE]><!-->
-<html lang="en"> <!--<![endif]-->
-<head>
-    <title>Ktor - asynchronous Web framework for Kotlin</title>
-    <!-- Meta -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="shortcut icon" href="/favicon.ico">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-    <!-- Global CSS -->
-    <link rel="stylesheet" href="{{ '/assets/plugins/bootstrap/css/bootstrap.min.css' | prepend: site.baseurl }}">
-    <!-- Plugins CSS -->
-    <link rel="stylesheet" href="{{ '/assets/plugins/font-awesome/css/font-awesome.css' | prepend: site.baseurl }}">
-    <link rel="stylesheet" href="{{ '/assets/plugins/elegant_font/css/style.css' | prepend: site.baseurl }}">
+---
+layout: default
+---
 
-    <!-- Theme CSS -->
-    <link id="theme-style" rel="stylesheet" href="{{ '/assets/css/styles.css' | prepend: site.baseurl }}">
-    <link id="theme-style" rel="stylesheet" href="{{ '/assets/css/syntax.css' | prepend: site.baseurl }}">
-    <!-- Estra CSS -->
-    <link id="extra-style" rel="stylesheet" href="{{ '/assets/css/extra.css' | prepend: site.baseurl }}">
+<header class="header text-center">
+    <div class="container">
+        <div class="branding">
+            <h1 class="logo">
+                <img src="assets/images/ktor_logo_white.svg" style="width:154px;height:64px;" alt="Ktor" />
+            </h1>
+        </div>
+        <div class="tagline">
+            <!--
+                        <p>Framework for connected applications in <a href="https://kotlinlang.org/">Kotlin</a></p>
+            -->
+            <p>Easy to use, fun and asynchronous.</p>
+        </div>
+    </div>
+</header>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+<section class="cards-section" style="padding-bottom:0;">
+    <div class="container">
+        <div class="cards-wrapper row">
+            <div id="doc-header" class="doc-header text-center">
+                <h1 class="doc-title">{{page.caption}}</h1>
+            </div>
+            <div class="doc-body">
+                {{ content }}
+            </div>
+        </div>
+    </div>
+</section>
 
-    <!-- Main Javascript -->
-    <script type="text/javascript" src="{{ '/assets/plugins/jquery-1.12.3.min.js' | prepend: site.baseurl }}"></script>
-    <script type="text/javascript" src="{{ '/assets/plugins/bootstrap/js/bootstrap.min.js' | prepend: site.baseurl }}"></script>
-    <script type="text/javascript" src="{{ '/assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js' | prepend: site.baseurl }}"></script>
-    <script type="text/javascript" src="{{ '/assets/plugins/lightbox/dist/ekko-lightbox.min.js' | prepend: site.baseurl }}"></script>
-    <script type="text/javascript" src="{{ '/assets/plugins/jquery-match-height/jquery.matchHeight-min.js' | prepend: site.baseurl }}"></script>
-    <script type="text/javascript" src="{{ '/assets/js/main.js' | prepend: site.baseurl }}"></script>
-    <script type="text/javascript" src="{{ '/assets/js/extra.js' | prepend: site.baseurl }}?v=2"></script>
-</head>
+<section class="cards-section text-center cards-gray">
+    <div class="container">
+        <div id="cards-wrapper" class="cards-wrapper row">
+            {% for section in site.data.sections.sections %}
+            <div class="item item-{{ section.color }} col-md-4 col-sm-6 col-xs-6">
+                <div class="item-inner">
+                    <div class="icon-holder">
+                        <span aria-hidden="true" class="icon icon_{{ section.icon }}"></span>
+                    </div><!--//icon-holder-->
+                    <h3 class="title">{{ section.title }} </h3>
+                    <p class="intro">{{ section.summary }}</p>
+                    <a class="link" href="{{ section.url | prepend: site.baseurl }}"><span></span></a>
+                </div>
+            </div>
+            {% endfor %}
 
-<body class="landing-page">
+            <a href="https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub"><img src="{{ '/assets/logo/jb_official.svg' | relative_url }}" style="width:70px;height:20px;" alt="JB official" /></a>
+            <a href="https://bintray.com/kotlin/ktor/ktor/{{site.ktor_version}}"><img src="{{ '/assets/logo/download_stable.svg' }}" style="width:104px;height:20px;" alt="Download {{ site.ktor_version }}" /></a>
+            <a href="https://teamcity.jetbrains.com/viewType.html?buildTypeId=KotlinTools_Ktor_BuildGradle&branch_KotlinTools_Ktor=%3Cdefault%3E&tab=buildTypeStatusDiv"><img src="https://img.shields.io/teamcity/http/teamcity.jetbrains.com/s/KotlinTools_Ktor_BuildGradle.svg" alt="Build status" /></a>
+            <a href="http://www.apache.org/licenses/LICENSE-2.0"><img src="{{ '/assets/logo/license.svg' | relative_url }}" style="width:120px;height:20px;" alt="license: Apache-2.0"></a>
+            <a href="https://github.com/ktorio/ktor"><img src="https://img.shields.io/github/stars/ktorio/ktor.svg?style=social&label=Star" alt="Ktor at github"></a>
 
-<div class="page-wrapper">
-    {% include home/caption.html %}
-    {% include home/text.html %}
-    {% include home/cards.html %}
-
-</div><!--//page-wrapper-->
-
-{% include footer.html %}
-
-</body>
-{% include google_analytics.html %}
-</html>
-
+            <div class="note contact" style="margin-top: 32px;">
+                Want to provide feedback, report bugs or ask questions?<br />
+                Head over our #ktor <a href="http://slack.kotlinlang.org/" target="_blank" rel="noopener">Kotlin Slack</a> channel, and we will try to help you!<br/>
+                You can also contribute by creating issues or pull requests in our <a href="https://github.com/ktorio/ktor">public GitHub repository</a>.
+            </div>
+        </div>
+    </div>
+</section>

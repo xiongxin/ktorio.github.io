@@ -14,7 +14,7 @@ the server and the client.
 Each message of this channel is called Frame: a frame can be a text or binary message,
 or a close or ping/pong message. Frames can be marked as incomplete or final.
 
-{% include feature/feature.html %}
+{% include feature.html %}
 
 **Table of contents:**
 
@@ -135,6 +135,7 @@ interface WebSocketSession {
     fun terminate() // Initiate connection termination immediately. Termination may complete asynchronously.
 }
 ```
+{: .compact }
 
 If you need information about the connection. For example the client ip, you have access
 to the call property. So you can do things like `call.request.origin.host` inside
@@ -212,3 +213,4 @@ fun testConversation() {
     }
 }
 ```
+{: .compact}

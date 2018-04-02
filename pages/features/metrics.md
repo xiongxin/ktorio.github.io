@@ -13,7 +13,7 @@ to get useful information about the server and the requests.
 
 It reports 
 
-{% include feature/feature.html %}
+{% include feature.html %}
 
 ## Installing
 
@@ -35,7 +35,7 @@ install(Metrics) {
 }
 ```
 
-![](/pages/features/metrics/jmx.png)
+![Ktor Metrics: JMX](/pages/features/metrics/jmx.png)
 
 ### SLF4J Reporter
 
@@ -53,7 +53,7 @@ install(Metrics) {
 }
 ```
 
-![](/pages/features/metrics/slf4j.png)
+![Ktor Metrics: SLF4J](/pages/features/metrics/slf4j.png)
 
 ### Other reporters
 

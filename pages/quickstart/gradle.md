@@ -44,14 +44,15 @@ apply plugin: 'kotlin'
 sourceCompatibility = 1.8
 
 repositories {
-    mavenCentral()
+    jcenter()
 }
 
 dependencies {
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
 ```
+{: .compact}
 
 ## Add Ktor dependencies and configure build settings
 {: #ktor-dependencies}
@@ -172,13 +173,12 @@ kotlin {
 }
 
 repositories {
-    mavenCentral()
-    maven { url "https://dl.bintray.com/kotlin/kotlinx" }
+    jcenter()
     maven { url "https://dl.bintray.com/kotlin/ktor" }
 }
 
 dependencies {
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     compile "io.ktor:ktor-server-netty:$ktor_version"
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
